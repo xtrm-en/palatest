@@ -1,0 +1,18 @@
+[
+    {
+        "modid": "${modid}",
+        "name": "${name}",
+        "description": "${desc}",
+        "version": "${version}",
+        "mcversion": "${mcversion}",
+        "url": "https://github.com/xtrm-en/paladium-forgedevtest",
+        "updateUrl": "",
+        "authorList": [
+            "xtrm"
+        ],
+        "credits": "Thanks anatawa12 and asbyth for the ForgeGradle fork.",
+        "logoFile": "",
+        "screenshots": [],
+        "dependencies": []
+    }
+]
