@@ -15,10 +15,10 @@ import org.apache.logging.log4j.Logger;
  * The Mod's main class, only serves as a bouncer to the
  * sided {@link AbstractProxy} implementation.
  *
- * @author xtrm
  * @see AbstractProxy
  * @see ClientProxy
  * @see ServerProxy
+ * @author xtrm
  */
 @Mod(modid = Constants.MODID, name = Constants.NAME, version = Constants.VERSION)
 public class PalaTest {

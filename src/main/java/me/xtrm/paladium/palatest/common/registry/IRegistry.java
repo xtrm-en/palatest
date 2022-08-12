@@ -1,8 +1,16 @@
 package me.xtrm.paladium.palatest.common.registry;
 
+import me.xtrm.paladium.palatest.common.registry.impl.ItemRegistry;
+
 import java.util.List;
 
-@SuppressWarnings("unchecked")
+/**
+ * Abstract components for a registry implementation.
+ *
+ * @see ItemRegistry
+ *
+ * @param <T> the type to be registered
+ */
 public interface IRegistry<T> {
     void registerAll();
 
@@ -13,6 +21,7 @@ public interface IRegistry<T> {
         return results.isEmpty() ? null : results.get(0);
     }
 
+    @SuppressWarnings("unchecked")
     default <V extends T> V withType(Class<V> clazz, V... reified) {
         throw new UnsupportedOperationException(
             "Cannot get a "

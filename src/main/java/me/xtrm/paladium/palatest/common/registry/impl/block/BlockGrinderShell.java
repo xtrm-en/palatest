@@ -29,7 +29,11 @@ public class BlockGrinderShell extends Block implements IRegistryHook<Block> {
 
     public BlockGrinderShell() {
         super(Material.rock);
-        wrap(this.setHardness(3.0F).setResistance(5.0F)).named("grinder_shell").defaultCreativeTab();
+        wrap(this
+            .setHardness(3.0F)
+            .setResistance(5.0F))
+            .named("grinder_shell")
+            .defaultCreativeTab();
     }
 
     @Override

@@ -23,6 +23,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.Instant;
 
+/**
+ * The server's sided proxy, mainly handles Database connections.
+ *
+ * @see AbstractProxy
+ *
+ * @author xtrm
+ */
 @Getter
 public class ServerProxy extends AbstractProxy {
     private static final Gson GSON = new GsonBuilder()

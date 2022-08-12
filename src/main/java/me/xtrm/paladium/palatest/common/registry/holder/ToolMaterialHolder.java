@@ -13,4 +13,11 @@ public class ToolMaterialHolder {
             4.5F,
             14
         );
+
+    /**
+     * Don't initialize a holder-class.
+     */
+    private ToolMaterialHolder() {
+        throw new Error();
+    }
 }

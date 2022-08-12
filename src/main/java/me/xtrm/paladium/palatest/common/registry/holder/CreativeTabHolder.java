@@ -16,6 +16,9 @@ public class CreativeTabHolder {
             }
         };
 
+    /**
+     * Don't initialize a holder-class.
+     */
     private CreativeTabHolder() {
         throw new Error();
     }

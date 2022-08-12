@@ -15,7 +15,6 @@ import java.util.Arrays;
 
 /**
  * @author xtrm
- * @since 1.0.0
  */
 @Getter
 public class AbstractProxy {
