@@ -15,7 +15,6 @@ import me.xtrm.paladium.palatest.server.database.dao.model.GrinderCraftModel;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.Logger;
-import org.sql2o.Connection;
 
 import java.io.File;
 import java.io.FileReader;
@@ -47,24 +46,29 @@ public class ServerProxy extends AbstractProxy {
     public void logCraft(EntityPlayer player, World worldObj, GrinderRecipe recipe) {
         if (!databaseConnector.isInitialized())
             return;
-        try (Connection connection = databaseConnector.getSql2o().open()) {
-            GrinderCraftService.INSTANCE.insert(
-                new GrinderCraftModel(
-                    player,
-                    recipe.output,
-                    Instant.now(),
-                    worldObj
-                )
-            );
-        } catch (Throwable throwable) {
-            PalaTest.INSTANCE.getLogger().error(
-                "Error while logging craft of {} for {} in {}.",
-                recipe.output.getItem().toString(),
-                player.getCommandSenderName(),
-                worldObj.getWorldInfo().getWorldName(),
-                throwable
-            );
-        }
+        final Logger logger = PalaTest.INSTANCE.getLogger();
+        final GrinderCraftModel model = new GrinderCraftModel(
+            player,
+            recipe.output,
+            Instant.now(),
+            worldObj
+        );
+        Thread thread = new Thread(() -> {
+            try {
+                GrinderCraftService.INSTANCE.insert(model);
+            } catch (Throwable throwable) {
+                logger.error(
+                    "Error while logging craft of {} for {} in {}.",
+                    recipe.output.getItem().toString(),
+                    player.getCommandSenderName(),
+                    worldObj.getWorldInfo().getWorldName(),
+                    throwable
+                );
+            }
+        });
+        thread.setName("Database Update Thread");
+        thread.setDaemon(true);
+        thread.start();
     }
 
     @Override
