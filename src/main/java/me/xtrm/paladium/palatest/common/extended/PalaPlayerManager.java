@@ -13,7 +13,7 @@ import net.minecraftforge.event.entity.EntityEvent;
  *
  * @author xtrm
  */
-public enum TPlayerManager {
+public enum PalaPlayerManager {
     INSTANCE;
 
     @SubscribeEvent

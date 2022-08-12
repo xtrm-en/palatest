@@ -4,7 +4,7 @@ import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import lombok.Getter;
 import me.xtrm.paladium.palatest.PalaTest;
-import me.xtrm.paladium.palatest.common.extended.TPlayerManager;
+import me.xtrm.paladium.palatest.common.extended.PalaPlayerManager;
 import me.xtrm.paladium.palatest.common.network.NetworkManager;
 import me.xtrm.paladium.palatest.common.registry.impl.*;
 import me.xtrm.paladium.palatest.common.ui.PaladiumGuiHandler;
@@ -55,7 +55,7 @@ public class AbstractProxy {
             new PaladiumGuiHandler()
         );
 
-        MinecraftForge.EVENT_BUS.register(TPlayerManager.INSTANCE);
+        MinecraftForge.EVENT_BUS.register(PalaPlayerManager.INSTANCE);
     }
 
     public void onPreServerStart(FMLServerAboutToStartEvent event) {
