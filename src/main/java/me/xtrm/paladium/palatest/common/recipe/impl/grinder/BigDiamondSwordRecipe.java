@@ -7,7 +7,8 @@ import me.xtrm.paladium.palatest.common.registry.impl.item.ItemSocketPattern;
 import net.minecraft.init.Items;
 
 public class BigDiamondSwordRecipe extends GrinderRecipe {
-    public BigDiamondSwordRecipe() {
+    @Override
+    public void declareRecipe() {
         input(Items.diamond_sword);
         input(ItemRegistry.INSTANCE.withType(ItemSocketPattern.class));
 

@@ -7,7 +7,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 
 public class GrinderPanelRecipe extends GenericRecipe {
-    public GrinderPanelRecipe() {
+    @Override
+    public void declareRecipe() {
         grid("ddd");
         grid("dfd");
         grid("ddd");

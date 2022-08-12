@@ -13,6 +13,10 @@ import net.minecraft.item.ItemStack;
  * @author xtrm
  */
 public interface IBaseRecipe {
+    /**
+     * Recipe-declaration should be done in this method.
+     */
+    void declareRecipe();
 
     void input(ItemStack itemStack);
 

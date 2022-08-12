@@ -6,7 +6,8 @@ import me.xtrm.paladium.palatest.common.registry.impl.block.BlockGrinderShell;
 import net.minecraft.init.Items;
 
 public class GrinderCasingRecipe extends GenericRecipe {
-    public GrinderCasingRecipe() {
+    @Override
+    public void declareRecipe() {
         grid("did");
         grid("   ");
         grid("did");

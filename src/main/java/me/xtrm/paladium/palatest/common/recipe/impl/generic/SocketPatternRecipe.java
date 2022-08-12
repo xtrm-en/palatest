@@ -6,7 +6,8 @@ import me.xtrm.paladium.palatest.common.registry.impl.item.ItemSocketPattern;
 import net.minecraft.init.Items;
 
 public class SocketPatternRecipe extends GenericRecipe {
-    public SocketPatternRecipe() {
+    @Override
+    public void declareRecipe() {
         grid("idi");
         grid("d d");
         grid("idi");

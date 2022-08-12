@@ -6,12 +6,16 @@ import net.minecraft.item.ItemStack;
 /**
  *
  */
-public class GrinderRecipe implements IBaseRecipe {
+public abstract class GrinderRecipe implements IBaseRecipe {
     public final ItemStack[] inputs = new ItemStack[2];
     private int inputCount = 0;
     public ItemStack output;
     public int levelCost = 0;
     public int ticks = 240;
+
+    public GrinderRecipe() {
+        this.declareRecipe();
+    }
 
     public void level(int level) {
         this.levelCost = level;

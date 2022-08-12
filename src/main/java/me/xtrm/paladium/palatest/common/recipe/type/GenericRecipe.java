@@ -5,7 +5,12 @@ import net.minecraft.item.ItemStack;
 
 import java.util.*;
 
-public class GenericRecipe implements IBaseRecipe {
+/**
+ * Implementation of {@link IBaseRecipe} for a Minecraft crafting table recipe.
+ *
+ * @author xtrm
+ */
+public abstract class GenericRecipe implements IBaseRecipe {
     // Shaped
     private final Map<Character, Object> bindings = new HashMap<>();
     private final String[] grid = new String[3];
@@ -15,6 +20,10 @@ public class GenericRecipe implements IBaseRecipe {
     // Common
     public ItemStack output;
     public boolean shapeless;
+
+    public GenericRecipe() {
+        this.declareRecipe();
+    }
 
     public void grid(String row) {
         if (gridCount >= 3)

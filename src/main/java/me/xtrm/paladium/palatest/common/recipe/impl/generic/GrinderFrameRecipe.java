@@ -6,7 +6,8 @@ import me.xtrm.paladium.palatest.common.registry.impl.block.BlockGrinderShell;
 import net.minecraft.init.Items;
 
 public class GrinderFrameRecipe extends GenericRecipe {
-    public GrinderFrameRecipe() {
+    @Override
+    public void declareRecipe() {
         grid("d d");
         grid("d d");
         grid("d d");
