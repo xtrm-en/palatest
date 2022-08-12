@@ -1,7 +1,7 @@
 package me.xtrm.paladium.palatest;
 
 /**
- * Constants holder, automatically filled by Gradle/blossom.
+ * Constants holder, automatically filled by ForgeGradle.
  *
  * @author xtrm
  */

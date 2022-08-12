@@ -1,0 +1,18 @@
+item.socket_pattern.name=Moule de base
+item.big_diamond_sword.name=Grande épée en diamant
+
+tile.grinder_shell.casing.name=Murs de Grinder
+tile.grinder_shell.frame.name=Structure de Grinder
+tile.grinder_panel.name=Grinder
+
+container.grinder=Grinder
+
+gui.grinder.level=Niveau de Diamant: %d
+
+title.grinder.locked=Grinder Bloqué
+message.grinder.locked=Votre grinder a été bloqué!%nVainquez les mini-guardians pour le débloquer.
+title.grinder.unlocked=Grinder Débloqué
+message.grinder.unlocked=Félicitations, vous avez vaincu tous les guardians!%Votre grinder est de nouveau opérationel.
+
+itemGroup.palatest=PalaTest
+

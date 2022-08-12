@@ -1,0 +1,17 @@
+item.socket_pattern.name=Socket Pattern
+item.big_diamond_sword.name=Big Diamond Sword
+
+tile.grinder_shell.casing.name=Grinder Casing
+tile.grinder_shell.frame.name=Grinder Frame
+tile.grinder_panel.name=Grinder
+
+container.grinder=Grinder
+
+gui.grinder.level=Diamond Level: %d
+
+title.grinder.locked=Grinder Locked
+message.grinder.locked=Your grinder has been locked!%nDefeat the mini-guardians to unlock it.
+title.grinder.unlocked=Grinder Unlocked
+message.grinder.unlocked=Congratulations, you defeated all the guardians!%nYour grinder is now available.
+
+itemGroup.palatest=PalaTest

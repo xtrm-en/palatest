@@ -1,2 +1,2 @@
-rootProject.name = "forgedevtest"
+rootProject.name = "palatest"
 
