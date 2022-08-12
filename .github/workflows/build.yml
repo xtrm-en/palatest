@@ -7,10 +7,6 @@ on:
 
 jobs:
     build:
-        strategy:
-            fail-fast: false
-            matrix:
-                java: [1.8, 11, 17]  # We're building on all Java LTS versions
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
@@ -20,7 +16,7 @@ jobs:
               uses: actions/setup-java@v1
               with:
                   java-package: jdk
-                  java-version: ${{ matrix.java }}
+                  java-version: 1.8
 
             - name: Make Gradle executable
               if: ${{ runner.os != 'Windows' }}
