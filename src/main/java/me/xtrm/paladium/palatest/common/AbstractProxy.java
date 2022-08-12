@@ -14,6 +14,8 @@ import java.io.File;
 import java.util.Arrays;
 
 /**
+ * Common proxy class overridden by the Client/Server proxy.
+ *
  * @author xtrm
  */
 @Getter

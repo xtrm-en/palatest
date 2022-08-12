@@ -4,6 +4,14 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+/**
+ * Base interface for a recipe.
+ * <p>
+ * This class contains a special DSL for declaring recipes, as well
+ * as some wrapper method to aid with polymorphic item declarations.
+ *
+ * @author xtrm
+ */
 public interface IBaseRecipe {
 
     void input(ItemStack itemStack);
