@@ -3,6 +3,8 @@ package me.xtrm.paladium.palatest.common.recipe.type;
 import me.xtrm.paladium.palatest.common.recipe.IBaseRecipe;
 import net.minecraft.item.ItemStack;
 
+import java.util.function.Consumer;
+
 /**
  *
  */
@@ -35,5 +37,13 @@ public abstract class GrinderRecipe implements IBaseRecipe {
     @Override
     public void result(ItemStack itemStack) {
         this.output = itemStack;
+    }
+
+    public static GrinderRecipe from(Consumer<GrinderRecipe> recipeConsumer) {
+        GrinderRecipe recipe = new GrinderRecipe() {
+            @Override public void declareRecipe() {}
+        };
+        recipeConsumer.accept(recipe);
+        return recipe;
     }
 }

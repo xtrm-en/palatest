@@ -6,11 +6,12 @@ import me.xtrm.paladium.palatest.common.recipe.IRecipeRegistrator;
 import me.xtrm.paladium.palatest.common.recipe.impl.generic.GrinderCasingRecipe;
 import me.xtrm.paladium.palatest.common.recipe.impl.generic.GrinderFrameRecipe;
 import me.xtrm.paladium.palatest.common.recipe.impl.generic.GrinderPanelRecipe;
-import me.xtrm.paladium.palatest.common.recipe.impl.generic.SocketPatternRecipe;
 import me.xtrm.paladium.palatest.common.recipe.impl.grinder.BigDiamondSwordRecipe;
 import me.xtrm.paladium.palatest.common.recipe.registration.GenericRegistrator;
 import me.xtrm.paladium.palatest.common.recipe.type.GenericRecipe;
 import me.xtrm.paladium.palatest.common.registry.IRegistry;
+import me.xtrm.paladium.palatest.common.registry.impl.item.ItemSocketPattern;
+import net.minecraft.init.Items;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -35,7 +36,16 @@ public enum RecipeRegistry implements IRegistry<IBaseRecipe> {
             new GrinderCasingRecipe(),
             new GrinderFrameRecipe(),
             new GrinderPanelRecipe(),
-            new SocketPatternRecipe(),
+            GenericRecipe.from(it -> {
+                it.grid("idi");
+                it.grid("d d");
+                it.grid("idi");
+
+                it.bind('i', Items.iron_ingot);
+                it.bind('d', Items.diamond);
+
+                it.result(ItemRegistry.INSTANCE.withType(ItemSocketPattern.class));
+            }),
 
             new BigDiamondSwordRecipe()
         ).forEach(recipe -> {

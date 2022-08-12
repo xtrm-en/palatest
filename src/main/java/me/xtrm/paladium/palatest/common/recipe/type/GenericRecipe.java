@@ -4,6 +4,7 @@ import me.xtrm.paladium.palatest.common.recipe.IBaseRecipe;
 import net.minecraft.item.ItemStack;
 
 import java.util.*;
+import java.util.function.Consumer;
 
 /**
  * Implementation of {@link IBaseRecipe} for a Minecraft crafting table recipe.
@@ -70,5 +71,13 @@ public abstract class GenericRecipe implements IBaseRecipe {
             }
             return result;
         }
+    }
+
+    public static GenericRecipe from(Consumer<GenericRecipe> recipeConsumer) {
+        GenericRecipe recipe = new GenericRecipe() {
+            @Override public void declareRecipe() {}
+        };
+        recipeConsumer.accept(recipe);
+        return recipe;
     }
 }
